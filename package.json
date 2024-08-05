@@ -34,8 +34,7 @@
         "lib",
         "bin",
         "index.js",
-        "chrome-remote-interface.js",
-        "webpack.config.js"
+        "chrome-remote-interface.js"
     ],
     "bin": {
         "chrome-remote-interface": "bin/client.js"
@@ -47,9 +46,7 @@
         "mocha": "^10.7.0"
     },
     "scripts": {
-        "test": "./scripts/run-tests.sh",
-        "webpack": "webpack",
-        "prepare": "webpack"
+        "test": "./scripts/run-tests.sh"
     },
     "type": "module"
 }
