@@ -8,7 +8,7 @@ import fs from 'fs';
 import path from 'path';
 import { program } from 'commander';
 import CDP from 'chrome-remote-interface';
-import packageInfo from '../package.json' assert { type: "json" };
+import packageInfo from '../package.json' with { type: "json" };
 
 function display(object) {
     return util.inspect(object, {
