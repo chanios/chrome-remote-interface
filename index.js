@@ -1,20 +1,11 @@
 'use strict';
 
-const EventEmitter = require('events');
-const dns = require('dns');
+import EventEmitter from 'events'
+import * as devtools from './lib/devtools.js'
+import { Chrome } from './lib/chrome.js'
 
-const devtools = require('./lib/devtools.js');
-const Chrome = require('./lib/chrome.js');
 
-// XXX reset the default that has been changed in
-// (https://github.com/nodejs/node/pull/39987) to prefer IPv4. since
-// implementations alway bind on 127.0.0.1 this solution should be fairly safe
-// (see #467)
-if (dns.setDefaultResultOrder) {
-    dns.setDefaultResultOrder('ipv4first');
-}
-
-function CDP(options, callback) {
+export const CDP = (options, callback) => {
     if (typeof options === 'function') {
         callback = options;
         options = undefined;
@@ -35,10 +26,9 @@ function CDP(options, callback) {
     }
 }
 
-module.exports = CDP;
-module.exports.Protocol = devtools.Protocol;
-module.exports.List = devtools.List;
-module.exports.New = devtools.New;
-module.exports.Activate = devtools.Activate;
-module.exports.Close = devtools.Close;
-module.exports.Version = devtools.Version;
+export const Protocol = devtools.Protocol
+export const List = devtools.List
+export const New = devtools.New
+export const Activate = devtools.Activate
+export const Close = devtools.Close
+export const Version = devtools.Version
