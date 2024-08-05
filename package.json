@@ -44,8 +44,7 @@
     "browser": "chrome-remote-interface.js",
     "devDependencies": {
         "eslint": "^9.8.0",
-        "mocha": "^10.7.0",
-        "util": "^0.12.5"
+        "mocha": "^10.7.0"
     },
     "scripts": {
         "test": "./scripts/run-tests.sh",
