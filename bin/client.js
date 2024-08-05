@@ -2,15 +2,13 @@
 
 'use strict';
 
-const repl = require('repl');
-const util = require('util');
-const fs = require('fs');
-const path = require('path');
-
-const program = require('commander');
-
-const CDP = require('../');
-const packageInfo = require('../package.json');
+import repl from 'repl';
+import util from 'util';
+import fs from 'fs';
+import path from 'path';
+import { program } from 'commander';
+import CDP from 'chrome-remote-interface';
+import packageInfo from '../package.json' assert { type: "json" };
 
 function display(object) {
     return util.inspect(object, {
